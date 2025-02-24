@@ -1,101 +1,490 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useState } from "react";
+
+import { FaXmark } from "react-icons/fa6";
+import { BsQrCodeScan } from "react-icons/bs";
+import { IoTicketSharp } from "react-icons/io5";
+import { IoIosInformationCircle } from "react-icons/io";
+
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css'; 
+import 'slick-carousel/slick/slick-theme.css';
+const settings = {
+  dots: true, // Enable dots
+  infinite: false, // Infinite loop
+  speed: 500, // Transition speed in ms
+  slidesToShow: 1.1, // Show part of the next slide
+  responsive: [
+    {
+      breakpoint: 768, // For smaller screens
+      settings: {
+        slidesToShow: 1.1, // Adjust slide visibility
+      },
+    },
+  ],
+  slidesToScroll: 1, // Scroll one slide at a time
+  centerMode: true, // Center current slide
+  centerPadding: '0', // Remove extra padding
+  arrows: false, // Hide arrows
+};
+
+const Modal = ({ isModalOpen, handleClose, handleTransferOpen, selected, handleCheckboxClick, selectedCount }) => {
+  if (!isModalOpen) return null;
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="modal-backdrop" onClick={handleClose}>
+      <div className="modal slide-up" onClick={(e) => e.stopPropagation()}>
+        <div className="modal-margin">
+          <h2 className="modal-title">SELECT TICKETS TO TRANSFER</h2>
+          <hr />
+          <p className="modal-disclaimer">
+            <span className="disclaimer-icon">
+              <IoIosInformationCircle />
+            </span>
+            <span>Only transfer tickets to people you know and trust to ensure everyone stays safe and socially distanced.</span>
+          </p>
+          <div className="modal-seat-details">
+            <p className="modal-seat-detail">SEC 112, Row 19</p>
+            <p className="modal-seat-ticket">
+              <span>
+                <IoTicketSharp />
+              </span>
+              <span>4 tickets</span>
+            </p>
+          </div>
+          <div className="checkbox-container-margin">
+            <div className="checkbox-container">
+              {["SEAT 4", "SEAT 5", "SEAT 6", "SEAT 7"].map((label, index) => (
+                <div
+                  key={index}
+                  className="checkbox-box"
+                  onClick={() => handleCheckboxClick(index)}
+                >
+                  <div className="checkbox-header">{label}</div>
+                  <div className="checkbox-input-container">
+                    <input
+                      type="checkbox"
+                      className={`checkbox-input ${selected[index] ? "selected" : ""}`}
+                      checked={selected[index]}
+                      onChange={() => handleCheckboxClick(index)}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+            <hr />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="footer">
+          <div className="checkbox-counter">{selectedCount} Selected</div>
+          <button className="open-modal-form" onClick={handleTransferOpen}>
+            TRANSFER TO &gt;
+          </button>
+        </div>
+      </div>
     </div>
   );
-}
+};
+
+const TransferModal = ({ isTransferModalOpen, handleTransferClose, selectedCount }) => {
+  if (!isTransferModalOpen) return null;
+
+  return (
+    <div className="modal-backdrop" onClick={handleTransferClose}>
+      <div className="modal slide-up" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-margin">
+        <div className="modal-title">
+          <h2>TRANSFER TICKETS</h2>
+        </div>
+        <hr />
+        <div className="transfer-modal-details">
+          <p>{selectedCount} Tickets Selected</p>
+        </div>
+        <div className="form-seat-details">
+          <div className="sec">
+            <h3>SEC</h3>
+            <p>112</p>
+          </div>
+
+          <div className="row">
+            <h3>ROW</h3>
+            <p>19</p>
+          </div>
+
+          <div className="seat">
+            <h3>SEATS</h3>
+            <p>{selectedCount}</p>
+          </div>
+        </div>
+        <div className="transfer-modal-form">
+        <form>
+            <div className="form-group">
+              <label htmlFor="first-name">First Name</label>
+              <input
+                type="text"
+                id="first-name"
+                name="firstName"
+                placeholder="First Name"
+                required
+                style={{ border: "1px solid black" }}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="last-name">Last Name</label>
+              <input
+                type="text"
+                id="last-name"
+                name="lastName"
+                placeholder="Last Name"
+                required
+                style={{ border: "1px solid black" }}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email-phone">Email or Phone</label>
+              <input
+                type="text"
+                id="email-phone"
+                name="emailPhone"
+                placeholder="Email or Phone"
+                required
+                style={{ border: "1px solid black" }}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Message"
+                rows="4"
+                style={{ border: "1px solid black" }}
+              ></textarea>
+            </div>
+          </form>
+        </div>
+        {/* <div className="transfer-modal-footer">
+          <button className="close-modal-btn" onClick={handleTransferClose}>
+            Cancel
+          </button>
+          <button className="submit-btn" type="submit">
+            Submit
+          </button>
+        </div> */}
+        </div>
+        
+        <div className="footer">
+          <div className="form-back-btn" onClick={handleTransferClose}>&lt; BACK</div>
+          <button className="close-modal-btn" onClick={handleTransferClose}>
+            Transfer {selectedCount} Tickets
+          </button>
+        </div> 
+      </div>
+    </div>
+  );
+};
+
+const Home = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isTransferModalOpen, setIsTransferModalOpen] = useState(false);
+  const [selectedCount, setSelectedCount] = useState(0);
+  const [selected, setSelected] = useState([false, false, false, false]);
+
+  const handleCheckboxClick = (index) => {
+    const updatedSelected = [...selected];
+    updatedSelected[index] = !updatedSelected[index];
+    setSelected(updatedSelected);
+    setSelectedCount(updatedSelected.filter(Boolean).length);
+  };
+
+  const handleClose = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleTransferClose = () => {
+    setIsTransferModalOpen(false);
+  };
+
+  const handleTransferOpen = () => {
+    setIsModalOpen(false);
+    setIsTransferModalOpen(true);
+  };
+
+  return (
+    <div>
+
+         {/* header */}
+         <div className="header">
+        <div className="x">
+          <FaXmark />
+        </div>
+
+        <div className="title-one">
+          <h2>My Tickets</h2>
+        </div>
+
+        <div className="help">
+          <h2>Help</h2>
+        </div>
+      </div>
+
+      <div className="ticket-slider">
+
+      
+      {/* slider */}
+      <Slider {...settings} style={{ paddingBottom: '0px' }}>
+      {/* Slide 1 */}
+
+         
+
+<div className="ticket">
+        <div className="slide-head">
+          <p>Standard Ticket</p>
+        </div>
+
+        <div className="seat-details">
+          <div className="sec">
+            <h3>SEC</h3>
+            <p>112</p>
+          </div>
+
+          <div className="row">
+            <h3>ROW</h3>
+            <p>19</p>
+          </div>
+
+          <div className="seat">
+            <h3>SEAT</h3>
+            <p>4</p>
+          </div>
+        </div>
+
+        <div className="event-details">
+          <div>
+            <p className="event-title">BILLIE EILISH: HIT ME HARD AND SOFT: THE TOUR</p>
+            <p>Thu, Jul 10, 7:00 pm &#183; 02 Arena</p>
+          </div>
+        </div> 
+
+        <div className="scan-barcode-container">
+          <div className="scan-barcode">
+            <p className="scan">
+              <span><BsQrCodeScan/></span> <span>View Barcode</span>
+            </p>
+          </div>
+
+          <div className="barcode-ticket-details">
+            <p>
+                Ticket Details
+            </p>
+          </div>
+          
+        </div>
+
+        <div className="ticket-verified">
+          <img src="/ticket-verified.jpg"/>
+        </div>
+      </div>
+      
+
+      {/* slide 2 */}
+     
+      <div className="ticket">
+        <div className="slide-head">
+          <p>Standard Ticket</p>
+        </div>
+
+        <div className="seat-details">
+          <div className="sec">
+            <h3>SEC</h3>
+            <p>112</p>
+          </div>
+
+          <div className="row">
+            <h3>ROW</h3>
+            <p>19</p>
+          </div>
+
+          <div className="seat">
+            <h3>SEAT</h3>
+            <p>5</p>
+          </div>
+        </div>
+
+        <div className="event-details">
+          <div>
+            <p className="event-title">Coldplay: Music of the spheres world tour 2025</p>
+            <p>Fri &#183; 22 Aug &#183; 5:00 pm &#183; London, GB Wembley Stadium </p>
+          </div>
+        </div> 
+
+        <div className="scan-barcode-container">
+          <div className="scan-barcode">
+            <p className="scan">
+              <span><BsQrCodeScan/></span> <span>View Barcode</span>
+            </p>
+          </div>
+
+          <div className="barcode-ticket-details">
+            <p>
+                Ticket Details
+            </p>
+          </div>
+          
+        </div>
+
+        <div className="ticket-verified">
+          <img src="/ticket-verified.jpg"/>
+        </div>
+      </div>
+      
+    
+
+    {/* slide 3 */}
+    
+      <div className="ticket">
+        <div className="slide-head">
+          <p>Standard Ticket</p>
+        </div>
+
+        <div className="seat-details">
+          <div className="sec">
+            <h3>SEC</h3>
+            <p>112</p>
+          </div>
+
+          <div className="row">
+            <h3>ROW</h3>
+            <p>19</p>
+          </div>
+
+          <div className="seat">
+            <h3>SEAT</h3>
+            <p>6</p>
+          </div>
+        </div>
+
+        <div className="event-details">
+          <div>
+            <p className="event-title">Coldplay: Music of the spheres world tour 2025</p>
+            <p>Fri &#183; 22 Aug &#183; 5:00 pm &#183; London, GB Wembley Stadium </p>
+          </div>
+        </div> 
+
+        <div className="scan-barcode-container">
+          <div className="scan-barcode">
+            <p className="scan">
+              <span><BsQrCodeScan/></span> <span>View Barcode</span>
+            </p>
+          </div>
+
+          <div className="barcode-ticket-details">
+            <p>
+                Ticket Details
+            </p>
+          </div>
+          
+        </div>
+
+        <div className="ticket-verified">
+          <img src="/ticket-verified.jpg"/>
+        </div>
+      </div>
+      
+
+
+{/* slide 4 */}
+
+      <div className="ticket">
+        <div className="slide-head">
+          <p>Standard Ticket</p>
+        </div>
+
+        <div className="seat-details">
+          <div className="sec">
+            <h3>SEC</h3>
+            <p>112</p>
+          </div>
+
+          <div className="row">
+            <h3>ROW</h3>
+            <p>19</p>
+          </div>
+
+          <div className="seat">
+            <h3>SEAT</h3>
+            <p>7</p>
+          </div>
+        </div>
+
+        <div className="event-details">
+          <div>
+            <p className="event-title">Coldplay: Music of the spheres world tour 2025</p>
+            <p>Fri &#183; 22 Aug &#183; 5:00 pm &#183; London, GB Wembley Stadium </p>
+          </div>
+        </div> 
+
+        <div className="scan-barcode-container">
+          <div className="scan-barcode">
+            <p className="scan">
+              <span><BsQrCodeScan/></span> <span>View Barcode</span>
+            </p>
+          </div>
+
+          <div className="barcode-ticket-details">
+            <p>
+                Ticket Details
+            </p>
+          </div>
+          
+        </div>
+
+        <div className="ticket-verified">
+          <img src="/ticket-verified.jpg"/>
+        </div>
+      </div>
+
+
+
+
+      
+      </Slider>
+      
+        
+   
+      
+      
+      {/* actions */}
+      <div className="actions-container">
+        <div className="actions">
+          <div className="action" onClick={() => setIsModalOpen(true)}>
+            <p>Transfer</p>
+          </div>
+
+          <div className="action">
+            <p>Sell</p>
+          </div>
+        </div>
+      </div>
+      
+      
+      <Modal
+        isModalOpen={isModalOpen}
+        handleClose={handleClose}
+        handleTransferOpen={handleTransferOpen}
+        selected={selected}
+        handleCheckboxClick={handleCheckboxClick}
+        selectedCount={selectedCount}
+      />
+      <TransferModal
+        isTransferModalOpen={isTransferModalOpen}
+        handleTransferClose={handleTransferClose}
+        selectedCount={selectedCount}
+      />
+    </div>
+    </div>
+  );
+};
+
+export default Home;
