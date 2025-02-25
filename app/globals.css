@@ -272,11 +272,10 @@ hr{
 }
 
 .checkbox-input {
-
   transform: scale(1.2);
   cursor: pointer;
   height: 30px;
-  width: 100%;
+  width: 30px;
   border-radius: 100%;
   border: 1px solid #ddd;
   -webkit-appearance: none;

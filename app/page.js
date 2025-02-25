@@ -29,7 +29,7 @@ const settings = {
   arrows: false, // Hide arrows
 };
 
-const Modal = ({ isModalOpen, handleClose, handleTransferOpen, selected, handleCheckboxClick, selectedCount }) => {
+const Modal = ({ isModalOpen, handleClose, handleTransferOpen, selected, handleCheckboxClick, selectedCount}) => {
   if (!isModalOpen) return null;
 
   return (
@@ -87,7 +87,7 @@ const Modal = ({ isModalOpen, handleClose, handleTransferOpen, selected, handleC
   );
 };
 
-const TransferModal = ({ isTransferModalOpen, handleTransferClose, selectedCount }) => {
+const TransferModal = ({ isTransferModalOpen, handleTransferClose, selectedCount, selectedRange  }) => {
   if (!isTransferModalOpen) return null;
 
   return (
@@ -114,7 +114,7 @@ const TransferModal = ({ isTransferModalOpen, handleTransferClose, selectedCount
 
           <div className="seat">
             <h3>SEATS</h3>
-            <p>{selectedCount}</p>
+            <p>{selectedRange}</p>
           </div>
         </div>
         <div className="transfer-modal-form">
@@ -190,7 +190,18 @@ const Home = () => {
   const [isTransferModalOpen, setIsTransferModalOpen] = useState(false);
   const [selectedCount, setSelectedCount] = useState(0);
   const [selected, setSelected] = useState([false, false, false, false]);
+  const getSelectedRange = () => {
+    const selectedSeats = selected
+      .map((isSelected, index) => (isSelected ? index + 4 : null))
+      .filter((seat) => seat !== null);
 
+    if (selectedSeats.length === 0) return "None";
+    if (selectedSeats.length === 1) return `${selectedSeats[0]}`;
+    if (selectedSeats.every((seat, i, arr) => i === 0 || seat === arr[i - 1] + 1)) {
+      return `${selectedSeats[0]}-${selectedSeats[selectedSeats.length - 1]}`;
+    }
+    return selectedSeats.join(", ");
+  };
   const handleCheckboxClick = (index) => {
     const updatedSelected = [...selected];
     updatedSelected[index] = !updatedSelected[index];
@@ -476,11 +487,13 @@ const Home = () => {
         selected={selected}
         handleCheckboxClick={handleCheckboxClick}
         selectedCount={selectedCount}
+        selectedRange={getSelectedRange()}
       />
       <TransferModal
         isTransferModalOpen={isTransferModalOpen}
         handleTransferClose={handleTransferClose}
         selectedCount={selectedCount}
+        selectedRange={getSelectedRange()}
       />
     </div>
     </div>
