@@ -325,8 +325,8 @@ const Home = () => {
 
         <div className="event-details">
           <div>
-            <p className="event-title">Coldplay: Music of the spheres world tour 2025</p>
-            <p>Fri &#183; 22 Aug &#183; 5:00 pm &#183; London, GB Wembley Stadium </p>
+            <p className="event-title">BILLIE EILISH: HIT ME HARD AND SOFT: THE TOUR</p>
+            <p>Thu, Jul 10, 7:00 pm &#183; 02 Arena </p>
           </div>
         </div> 
 
@@ -378,8 +378,8 @@ const Home = () => {
 
         <div className="event-details">
           <div>
-            <p className="event-title">Coldplay: Music of the spheres world tour 2025</p>
-            <p>Fri &#183; 22 Aug &#183; 5:00 pm &#183; London, GB Wembley Stadium </p>
+            <p className="event-title">BILLIE EILISH: HIT ME HARD AND SOFT: THE TOUR</p>
+            <p>Thu, Jul 10, 7:00 pm &#183; 02 Arena </p>
           </div>
         </div> 
 
@@ -431,8 +431,8 @@ const Home = () => {
 
         <div className="event-details">
           <div>
-            <p className="event-title">Coldplay: Music of the spheres world tour 2025</p>
-            <p>Fri &#183; 22 Aug &#183; 5:00 pm &#183; London, GB Wembley Stadium </p>
+            <p className="event-title">BILLIE EILISH: HIT ME HARD AND SOFT: THE TOUR</p>
+            <p>Thu, Jul 10, 7:00 pm &#183; 02 Arena </p>
           </div>
         </div> 
 
