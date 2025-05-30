@@ -41,7 +41,7 @@ const ticketdetails = () => {
                     </div>
 
                     <div className="ticket_details_info">
-                        Sec 111/13/3-5
+                        Sec 110/W/303-304
                     </div>
                 </div>
 
@@ -65,7 +65,7 @@ const ticketdetails = () => {
                     </div>
 
                     <div className="ticket_details_info">
-                        UPPER LEVEL
+                        UPPER TIER
                     </div>
                 </div>
 
@@ -77,8 +77,8 @@ const ticketdetails = () => {
                     </div>
 
                     <div className="ticket_details_info">
-                        Coldplay:Music of the spheres world Tour 2025
-                        Wembley Stadium, London GB.  Mon, 8 Sep 2025, 17:00
+                        Billie Eilish: Hit me hard and soft: The tour 2025
+                        The O2 Arena, United Kingdom.  Sun, 13 Sep 2025, 18:30
 
                     </div>
                 </div>
@@ -92,7 +92,7 @@ const ticketdetails = () => {
                     </div>
 
                     <div className="ticket_details_info">
-                        267658050953463369c
+                        67625105095377336ZF
                     </div>
                 </div>
 
@@ -100,12 +100,11 @@ const ticketdetails = () => {
 
                 <div className="ticket-detail">
                     <div className="ticket_details_titles">
-                        Wembley Stadium
-
+                        The O2 Arena 
                     </div>
 
                     <div className="ticket_details_info">
-                        London, GB
+                        London, United kingdom
                     </div>
                 </div>
 
@@ -118,7 +117,7 @@ const ticketdetails = () => {
                     </div>
 
                     <div className="ticket_details_info">
-                        9-48377/WDD
+                        7-10992/AAO
                     </div>
                 </div>
 
@@ -145,7 +144,7 @@ const ticketdetails = () => {
 
 
                     <div className="ticket_details_info">
-                        Tue, Oct 1 2024 - 11:44PM
+                        Thu, Mar 16 2024 - 09:36AM
                     </div>
                 </div>
 
@@ -160,11 +159,11 @@ const ticketdetails = () => {
 
                     <div className="ticket_details_info flexed">
                         <div className="ticket_details_info_flexed right">
-                            Reserved Seated Tickets x3 :
+                            Reserved Seated Tickets x2 :
                         </div>
 
                         <div className="ticket_details_info_flexed left">
-                            £247.25
+                            £204.26
                         </div>
 
                     </div>
@@ -175,7 +174,7 @@ const ticketdetails = () => {
                         </div>
 
                         <div className="ticket_details_info_flexed left">
-                            £741.75
+                            £408.52
                         </div>
 
                     </div>
