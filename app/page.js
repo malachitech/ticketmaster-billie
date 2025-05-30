@@ -45,7 +45,7 @@ const Modal = ({ isModalOpen, handleClose, handleTransferOpen, selected, handleC
             <span>Only transfer tickets to people you know and trust to ensure everyone stays safe and socially distanced.</span>
           </p>
           <div className="modal-seat-details">
-            <p className="modal-seat-detail">SEC 112, Row 19</p>
+            <p className="modal-seat-detail">SEC 110, Row W</p>
             <p className="modal-seat-ticket">
               <span>
                 <IoTicketSharp />
@@ -104,7 +104,7 @@ const TransferModal = ({ isTransferModalOpen, handleTransferClose, selectedCount
         <div className="form-seat-details">
           <div className="sec">
             <h3>SEC</h3>
-            <p>112</p>
+            <p>110</p>
           </div>
 
           <div className="row">
@@ -257,7 +257,7 @@ const Home = () => {
         <div className="seat-details">
           <div className="sec">
             <h3>SEC</h3>
-            <p>112</p>
+            <p>110</p>
           </div>
 
           <div className="row">
@@ -309,7 +309,7 @@ const Home = () => {
         <div className="seat-details">
           <div className="sec">
             <h3>SEC</h3>
-            <p>112</p>
+            <p>110</p>
           </div>
 
           <div className="row">
@@ -362,7 +362,7 @@ const Home = () => {
         <div className="seat-details">
           <div className="sec">
             <h3>SEC</h3>
-            <p>112</p>
+            <p>110</p>
           </div>
 
           <div className="row">
@@ -415,7 +415,7 @@ const Home = () => {
         <div className="seat-details">
           <div className="sec">
             <h3>SEC</h3>
-            <p>112</p>
+            <p>110</p>
           </div>
 
           <div className="row">
