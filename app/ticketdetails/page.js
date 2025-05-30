@@ -144,7 +144,7 @@ const ticketdetails = () => {
 
 
                     <div className="ticket_details_info">
-                        Thu, Mar 16 2024 - 09:36AM
+                        Thu, May 16 2024 - 09:36AM
                     </div>
                 </div>
 
