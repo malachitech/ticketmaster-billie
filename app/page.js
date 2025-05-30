@@ -50,7 +50,7 @@ const Modal = ({ isModalOpen, handleClose, handleTransferOpen, selected, handleC
               <span>
                 <IoTicketSharp />
               </span>
-              <span>4 tickets</span>
+              <span>2 tickets</span>
             </p>
           </div>
           <div className="checkbox-container-margin">
@@ -192,7 +192,7 @@ const Home = () => {
   const [selected, setSelected] = useState([false, false, false, false]);
   const getSelectedRange = () => {
     const selectedSeats = selected
-      .map((isSelected, index) => (isSelected ? index + 4 : null))
+      .map((isSelected, index) => (isSelected ? index + 303 : null))
       .filter((seat) => seat !== null);
 
     if (selectedSeats.length === 0) return "None";
