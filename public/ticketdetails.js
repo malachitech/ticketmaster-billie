@@ -12,7 +12,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 
-const Ticketdetails = () => {
+const ticketdetails = () => {
 
 
     return (
@@ -212,4 +212,4 @@ const Ticketdetails = () => {
     );
 };
 
-export default Ticketdetails;
+export default ticketdetails;
