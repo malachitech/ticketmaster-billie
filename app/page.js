@@ -326,7 +326,7 @@ const Home = () => {
         <div className="event-details">
           <div>
             <p className="event-title">BILLIE EILISH: HIT ME HARD AND SOFT: THE TOUR</p>
-            <p>Thu, Jul 10, 7:00 pm &#183; 02 Arena </p>
+            <p>Sun, Jul 13, 6:30&nbsp;pm &#183; 02 Arena </p>
           </div>
         </div> 
 
