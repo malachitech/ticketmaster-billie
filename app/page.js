@@ -286,7 +286,7 @@ const Home = () => {
           </div>
 
           <div className="barcode-ticket-details">
-          <a href="/ticketdetails.js">
+          <a href="/ticketdetails">
                   <span>
                     Ticket Details 1
                   </span>
