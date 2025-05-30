@@ -286,9 +286,11 @@ const Home = () => {
           </div>
 
           <div className="barcode-ticket-details">
-            <p>
-                Ticket Details
-            </p>
+          <Link href="/ticketdetails">
+                  <span>
+                    Ticket Details
+                  </span>
+                </Link>
           </div>
           
         </div>
@@ -338,9 +340,11 @@ const Home = () => {
           </div>
 
           <div className="barcode-ticket-details">
-            <p>
-                Ticket Details
-            </p>
+          <Link href="/ticketdetails">
+                  <span>
+                    Ticket Details
+                  </span>
+                </Link>
           </div>
           
         </div>
@@ -391,9 +395,11 @@ const Home = () => {
           </div>
 
           <div className="barcode-ticket-details">
-            <p>
-                Ticket Details
-            </p>
+          <Link href="/ticketdetails">
+                  <span>
+                    Ticket Details
+                  </span>
+                </Link>
           </div>
           
         </div>
@@ -444,9 +450,11 @@ const Home = () => {
           </div>
 
           <div className="barcode-ticket-details">
-            <p>
-                Ticket Details
-            </p>
+          <Link href="/ticketdetails">
+                  <span>
+                    Ticket Details
+                  </span>
+                </Link>
           </div>
           
         </div>
