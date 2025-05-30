@@ -1,6 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export',
-};
-
-export default nextConfig;
+    async rewrites() {
+      return [
+        {
+          source: '/:path*.txt',
+          destination: '/:path*',
+        },
+      ];
+    },
+  };
+  
+  export default nextConfig;
