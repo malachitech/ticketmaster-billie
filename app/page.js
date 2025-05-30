@@ -55,7 +55,7 @@ const Modal = ({ isModalOpen, handleClose, handleTransferOpen, selected, handleC
           </div>
           <div className="checkbox-container-margin">
             <div className="checkbox-container">
-              {["SEAT 4", "SEAT 5", "SEAT 6", "SEAT 7"].map((label, index) => (
+              {["SEAT 303", "SEAT 304"].map((label, index) => (
                 <div
                   key={index}
                   className="checkbox-box"
@@ -109,7 +109,7 @@ const TransferModal = ({ isTransferModalOpen, handleTransferClose, selectedCount
 
           <div className="row">
             <h3>ROW</h3>
-            <p>19</p>
+            <p>W</p>
           </div>
 
           <div className="seat">
@@ -262,19 +262,19 @@ const Home = () => {
 
           <div className="row">
             <h3>ROW</h3>
-            <p>19</p>
+            <p>W</p>
           </div>
 
           <div className="seat">
             <h3>SEAT</h3>
-            <p>4</p>
+            <p>303</p>
           </div>
         </div>
 
         <div className="event-details">
           <div>
             <p className="event-title">BILLIE EILISH: HIT ME HARD AND SOFT: THE TOUR</p>
-            <p>Sun, Jul 13, 6:30&nbsp;pm &#183; 02 Arena </p>
+            <p>Sun, Jul 13, 6:30&nbsp;pm &#183; The O2 Arena </p>
           </div>
         </div> 
 
@@ -316,19 +316,19 @@ const Home = () => {
 
           <div className="row">
             <h3>ROW</h3>
-            <p>19</p>
+            <p>W</p>
           </div>
 
           <div className="seat">
             <h3>SEAT</h3>
-            <p>5</p>
+            <p>304</p>
           </div>
         </div>
 
         <div className="event-details">
           <div>
             <p className="event-title">BILLIE EILISH: HIT ME HARD AND SOFT: THE TOUR</p>
-            <p>Sun, Jul 13, 6:30&nbsp;pm &#183; 02 Arena </p>
+            <p>Sun, Jul 13, 6:30&nbsp;pm &#183; The O2 Arena </p>
           </div>
         </div> 
 
@@ -358,7 +358,7 @@ const Home = () => {
 
     {/* slide 3 */}
     
-      <div className="ticket">
+      {/* <div className="ticket">
         <div className="slide-head">
           <p>Standard Ticket</p>
         </div>
@@ -383,7 +383,7 @@ const Home = () => {
         <div className="event-details">
           <div>
             <p className="event-title">BILLIE EILISH: HIT ME HARD AND SOFT: THE TOUR</p>
-            <p>Sun, Jul 13, 6:30&nbsp;pm &#183; 02 Arena </p>
+            <p>Sun, Jul 13, 6:30&nbsp;pm &#183; The O2 Arena </p>
           </div>
         </div> 
 
@@ -407,13 +407,13 @@ const Home = () => {
         <div className="ticket-verified">
           <img src="/ticket-verified.jpg"/>
         </div>
-      </div>
+      </div> */}
       
 
 
 {/* slide 4 */}
 
-      <div className="ticket">
+      {/* <div className="ticket">
         <div className="slide-head">
           <p>Standard Ticket</p>
         </div>
@@ -438,7 +438,7 @@ const Home = () => {
         <div className="event-details">
           <div>
             <p className="event-title">BILLIE EILISH: HIT ME HARD AND SOFT: THE TOUR</p>
-            <p>Sun, Jul 13, 6:30&nbsp;pm &#183; 02 Arena </p>
+            <p>Sun, Jul 13, 6:30&nbsp;pm &#183; The O2 Arena </p>
           </div>
         </div> 
 
@@ -462,7 +462,7 @@ const Home = () => {
         <div className="ticket-verified">
           <img src="/ticket-verified.jpg"/>
         </div>
-      </div>
+      </div> */}
 
 
 
