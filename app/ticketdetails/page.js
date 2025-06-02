@@ -49,7 +49,7 @@ const ticketdetails = () => {
 
                 <div className="ticket-detail">
                     <div className="ticket_details_titles">
-                        Coldplay:Music of the spheres world Tour 2025
+                        Coldplay: Music of the spheres world Tour 2025
                     </div>
 
                     <div className="ticket_details_info">
