@@ -53,7 +53,8 @@ const ticketdetails = () => {
                     </div>
 
                     <div className="ticket_details_info">
-                        Mon, 8 Sep, 17:00
+                        Sun, 13 Jul, 18:30
+
                     </div>
                 </div>
 
