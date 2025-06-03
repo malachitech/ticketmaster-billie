@@ -49,7 +49,7 @@ const ticketdetails = () => {
 
                 <div className="ticket-detail">
                     <div className="ticket_details_titles">
-                        Coldplay: Music of the spheres world Tour 2025
+                        BILLIE EILISH: HIT ME HARD AND SOFT: THE TOUR
                     </div>
 
                     <div className="ticket_details_info">
