@@ -79,7 +79,7 @@ const ticketdetails = () => {
 
                     <div className="ticket_details_info">
                         Billie Eilish: Hit me hard and soft: The tour 2025
-                        The O2 Arena, United Kingdom.  Sun, 13 Sep 2025, 18:30
+                        The O2 Arena, United Kingdom.  Sun, 13 Jul 2025, 18:30
 
                     </div>
                 </div>
